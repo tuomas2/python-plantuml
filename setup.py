@@ -1,4 +1,5 @@
 from setuptools import setup, find_packages
+import re
 
 def get_version(filename):
     with open(filename) as fh:
