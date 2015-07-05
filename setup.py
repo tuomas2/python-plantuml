@@ -1,9 +1,13 @@
 from setuptools import setup, find_packages
-import plantuml
+
+def get_version(filename):
+    with open(filename) as fh:
+        metadata = dict(re.findall("__([a-z]+)__ = '([^']+)'", fh.read()))
+        return metadata['version_string']
 
 setup(
     name="plantuml",
-    version=plantuml.__version_string__,
+    version=get_version('plantuml.py'),
     description="",
     long_description=open('README.rst').read(),
     url="https://github.com/dougn/python-plantuml/",
